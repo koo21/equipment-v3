@@ -1,3 +1,8 @@
+<?php
+include '../conn/conn.php';
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,11 +18,51 @@
 </head>
 
 <body>
-    <?php include '../banner/banner1.php'; ?>
+    <?php include '.../banner/banner1.php'; ?>
     <div class="container" style="margin-top: 15rem;">
         <div class="col-md-12">
             <h3>รายการทั้งหมด</h3>
-            <p>kkkkkkkkkkk</p>
+            <hr>
+            <div class="row">
+                <?php
+                include 'myClass.php';
+                $obj = new MyClass;
+                include 'link.php';
+                $stmt = $coon->prepare(" SELECT* FROM main_tool ORDER BY tool_id DESC LIMIT 0,20 ");
+                $stmt->execute();
+                while ($r = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+                    if ($r["tool_img"] == "") {
+                        $toolImg = '../images/imgTool/noImg.jpeg';
+                    } else {
+                        $toolImg = $link . $r["tool_img"];
+                    }
+
+                    if ($r["tool_id_user"] == 0) {
+                        $toolIdUser = 'ส่วนกลาง';
+                    } else {
+                        $toolIdUser = $obj->nameUser($r["tool_id_user"]);
+                    }
+                ?>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="imgFix">
+                                <img class="card-img-top" src="<?= $toolImg ?>" alt="<?= $r["tool_ad1"] ?>">
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text cardText">
+                                    <b>เลขครุภัณฑ์ : </b> <?= $r["tool_as"] ?> <br>
+                                    <b>ชื่อครุภัณฑ์ :</b> <?= $r["tool_ad1"] ?> <br>
+                                    <b>ที่ตั้ง : </b> <?= $obj->nameRoom($r["tool_id_room"])  ?> <br>
+                                    <b>ผู้ครอบครอง : </b> <?= $toolIdUser  ?>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                }
+                ?>
+            </div>
         </div>
     </div>
 
