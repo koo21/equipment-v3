@@ -12,7 +12,7 @@ $row->rowCount($stmt);
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if (empty($stmt)) {
-    echo "don't connect";
+    echo "don't connect ka";
 } else {
     $_SESSION["checkLogin"] = $row["admin_check_login"];
 
