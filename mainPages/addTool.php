@@ -64,12 +64,12 @@ include '../conn/conn.php';
                     </div>
                     <div class="col">
                         <label for="inputPassword" class=" col-form-label">ชั้น</label>
-                        <input type="number" class="form-control" id="inputPassword" name="name">
+                        <input type="number" class="form-control" id="inputPassword" name="">
 
                     </div>
                     <div class="col">
                         <label for="inputPassword" class=" col-form-label">ชื่อห้อง</label>
-                        <input type="text" class="form-control" id="inputPassword" name="name">
+                        <input type="text" class="form-control" id="inputPassword" name="">
 
                     </div>
                 </div>
