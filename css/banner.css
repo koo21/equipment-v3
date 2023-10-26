@@ -1,11 +1,82 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap");
 
 .bannerMain {
-    display: block;
-    width: 100%;
-    height: 550px;
-    background-image: url('../images/bk1.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  display: block;
+  width: 100%;
+  height: 550px;
+  background-image: url("../images/bk1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+}
+
+.bannerText {
+  text-align: center;
+  color: #000000;
+  font-family: "Prompt", sans-serif;
+  margin-top: 20vh;
+  text-shadow: 0px 0px 5px #fdfdfd;
+}
+
+.menuMain {
+  display: flex;
+  position: absolute;
+  z-index: 9999;
+  width: 100%;
+  height: 80px;
+  background-color: #000000cc;
+  align-items: center;
+  justify-content: space-between;
+  justify-items: center;
+}
+.logo {
+  display: block;
+  width: 250px;
+  height: auto;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+}
+
+.menuMain .menuBox {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+}
+
+.menuMain .menuBox ul {
+  margin-top: 0.8rem;
+  list-style: none;
+  text-align: end;
+}
+
+.menuMain .menuBox ul li {
+  display: block;
+  width: auto;
+  height: auto;
+}
+
+.menuMain .menuBox ul li a {
+  display: block;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #fdfdfd;
+  font-family: "Prompt", sans-serif;
+}
+
+#modalLogin {
+  position: relative;
+  z-index: 999999999;
+  font-family: "Prompt", sans-serif;
+}
+
+.modal .modal-dialog .modal-content {
+  background-color: #675d4b;
+  color: #fdfdfd;
 }
