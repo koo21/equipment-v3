@@ -12,12 +12,43 @@
   top: 0;
 }
 
+.bannerMain1 {
+  display: block;
+  width: 100%;
+  height: 450px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+}
+.bannerText1 {
+  text-align: center;
+  color: #000000;
+  font-family: "Prompt", sans-serif;
+  margin-top: 7rem;
+  text-shadow: 0px 0px 5px #fdfdfd;
+}
+
 .bannerText {
   text-align: center;
   color: #000000;
   font-family: "Prompt", sans-serif;
   margin-top: 20vh;
   text-shadow: 0px 0px 5px #fdfdfd;
+}
+
+.menuMain1 {
+  display: flex;
+  position: absolute;
+  z-index: 99999;
+  width: 100%;
+  height: 80px;
+  background-color: #000000cc;
+  align-items: center;
+  justify-content: space-between;
+  justify-items: center;
+  top: 0;
 }
 
 .menuMain {
@@ -61,6 +92,34 @@
 }
 
 .menuMain .menuBox ul li a {
+  display: block;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #fdfdfd;
+  font-family: "Prompt", sans-serif;
+}
+
+.menuMain1 .menuBox1 {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+}
+
+.menuMain1 .menuBox1 ul {
+  margin-top: 0.8rem;
+  list-style: none;
+  text-align: end;
+}
+
+.menuMain1 .menuBox1 ul li {
+  display: block;
+  width: auto;
+  height: auto;
+}
+
+.menuMain1 .menuBox1 ul li a {
   display: block;
   width: auto;
   height: auto;
