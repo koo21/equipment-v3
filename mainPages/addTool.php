@@ -20,7 +20,7 @@ include '../conn/conn.php';
     <div class="container" style="margin-top: 15rem;">
         <div class="col-md-12">
             <h3>เพิ่มข้อมูลครุภัณฑ์ใหม่</h3>
-
+            <h2>ttttttt</h2>
             <form action="" method="post">
                 <div class="row g-3">
                     <div class="col-md-6">
