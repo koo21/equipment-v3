@@ -1,12 +1,12 @@
-<div class="container-fluid menuMain1">
+<div class="container-fluid menuMain1 ">
     <div class="logo">
         <img src="../images/ipsr_logo.png" alt="สถาบันวิจัยประชากรและสังคม
             มหาวิทยาลัยมหิดล" srcset="">
     </div>
     <div class="menuBox1">
         <ul>
-            <li><a href="#" data-bs-toggle="modal" data-bs-target="#modalLogin"><i class="bi bi-box-arrow-in-right"></i>
-                    เข้าสู่ระบบงานครุภัณฑ์</a></li>
+            <li><a href="logout.php"><i class="bi bi-box-arrow-in-right"></i>
+                    ออกจากระบบงานครุภัณฑ์</a></li>
         </ul>
     </div>
 </div>

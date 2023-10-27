@@ -20,4 +20,14 @@ class MyClass
 
         return $r["name"];
     }
+
+    public function checkTool($n)
+    {
+        include '../conn/conn.php';
+        $stmt = $coon->prepare(" SELECT* FROM admin_check_tool WHERE ac_num = ? ");
+        $stmt->execute([$n]);
+        $r = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $r["ac_name"];
+    }
 }
