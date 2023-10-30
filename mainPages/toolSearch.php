@@ -1,7 +1,6 @@
 <?php
 session_start();
 include '../conn/conn.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -24,8 +23,7 @@ include '../conn/conn.php';
         <div class="col-md-12">
             <h3>รายการทั้งหมด</h3>
             <div class="btnSearch text-end ">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
-                    data-bs-target="#modalSearch">
+                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalSearch">
                     <i class="bi bi-search"></i> ค้นหาครุภัณฑ์
                 </button>
             </div>
@@ -38,8 +36,32 @@ include '../conn/conn.php';
                 $obj = new MyClass;
                 include 'link.php';
 
-                $np = $coon->prepare(" SELECT* FROM main_tool ORDER BY tool_id DESC ");
-                $np->execute();
+                $numTool = $_POST["numTool"];
+                $nameTool = $_POST["nameTool"];
+                $addTool = $_POST["addTool"];
+                $adminTool = $_POST["adminTool"];
+
+                if (!empty($_POST["numTool"])) {
+                    $toolDb = 'tool_as LIKE ?';
+                    $tool = "%$numTool%";
+                }
+                if (!empty($_POST["nameTool"])) {
+                    $toolDb = 'tool_ad1 LIKE ?';
+                    $tool = "%$nameTool%";
+                }
+                if (!empty($_POST["addTool"])) {
+                    $toolDb = 'tool_id_room = ?';
+                    $tool = $addTool;
+                }
+                if (!empty($_POST["adminTool"])) {
+                    $toolDb = 'tool_check = ?';
+                    $tool = $adminTool;
+                }
+
+
+
+                $np = $coon->prepare(" SELECT* FROM main_tool WHERE  $toolDb  ORDER BY tool_id DESC ");
+                $np->execute([$tool]);
                 $Num_Rows = $np->rowCount();
 
 
@@ -64,8 +86,8 @@ include '../conn/conn.php';
                 }
 
 
-                $stmt = $coon->prepare(" SELECT* FROM main_tool ORDER BY tool_id DESC LIMIT $Page_Start , $Per_Page ");
-                $stmt->execute();
+                $stmt = $coon->prepare(" SELECT* FROM main_tool WHERE $toolDb  ORDER BY tool_id DESC LIMIT $Page_Start , $Per_Page ");
+                $stmt->execute([$tool]);
                 while ($r = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
                     if ($r["tool_img"] == "") {
@@ -86,29 +108,29 @@ include '../conn/conn.php';
                         $iconStatus = 'n.png';
                     }
                 ?>
-                <div class="col-md-3 mb-3 ">
-                    <div class="card">
-                        <div class="cardFixSize">
-                            <div class="imgFix">
-                                <div class="iconStatus"><img src="../images/<?= $iconStatus ?>" alt="" srcset=""></div>
-                                <img class="card-img-top" src="<?= $toolImg ?>" alt="<?= $r["tool_ad1"] ?>">
-                            </div>
-                            <div class="card-body cardBk">
-                                <p class="card-text cardText">
-                                    <b>เลขครุภัณฑ์ : </b> <?= $r["tool_as"] ?> <br>
-                                    <b>ชื่อครุภัณฑ์ :</b> <?= $r["tool_ad1"] ?> <br>
-                                    <b>ที่ตั้ง : </b> <?= $obj->nameRoom($r["tool_id_room"]) .$r["tool_id_room"] ?> <br>
-                                    <b>ผู้ครอบครอง : </b> <?= $toolIdUser  ?> <br>
-                                    <b>หน่วยงานที่รับผิดชอบ : </b> <?= $obj->checkTool($r["tool_check"]) ?>
-                                </p>
-                                <div class="text-center">
-                                    <a class="btn btn-warning btn-sm" href="edit.php?id=<?= $r["tool_id"] ?>"
-                                        role="button"><i class="bi bi-pencil-square"></i> แก้ไขข้อมูล</a>
+                    <div class="col-md-3 mb-3 ">
+                        <div class="card">
+                            <div class="cardFixSize">
+                                <div class="imgFix">
+                                    <div class="iconStatus"><img src="../images/<?= $iconStatus ?>" alt="" srcset=""></div>
+                                    <img class="card-img-top" src="<?= $toolImg ?>" alt="<?= $r["tool_ad1"] ?>">
+                                </div>
+                                <div class="card-body cardBk">
+                                    <p class="card-text cardText">
+                                        <b>เลขครุภัณฑ์ : </b> <?= $r["tool_as"] ?> <br>
+                                        <b>ชื่อครุภัณฑ์ :</b> <?= $r["tool_ad1"] ?> <br>
+                                        <b>ที่ตั้ง : </b> <?= $obj->nameRoom($r["tool_id_room"])  ?>
+                                        <?= $r["tool_id_room"] ?><br>
+                                        <b>ผู้ครอบครอง : </b> <?= $toolIdUser  ?> <br>
+                                        <b>หน่วยงานที่รับผิดชอบ : </b> <?= $obj->checkTool($r["tool_check"]) ?>
+                                    </p>
+                                    <div class="text-center">
+                                        <a class="btn btn-warning btn-sm" href="edit.php?id=<?= $r["tool_id"] ?>" role="button"><i class="bi bi-pencil-square"></i> แก้ไขข้อมูล</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 <?php
                 }
                 ?>
@@ -135,9 +157,10 @@ include '../conn/conn.php';
 
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"
-        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <?php include 'modalSearch.php'; ?>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
