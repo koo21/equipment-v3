@@ -10,7 +10,7 @@ include '../conn/conn.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><?php include '../title-footer/title.php'; ?></title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/banner.css">
     <link rel="stylesheet" href="../boot5/css/bootstrap.min.css">
@@ -24,8 +24,7 @@ include '../conn/conn.php';
         <div class="col-md-12">
             <h3>รายการทั้งหมด</h3>
             <div class="btnSearch text-end ">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
-                    data-bs-target="#modalSearch">
+                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalSearch">
                     <i class="bi bi-search"></i> ค้นหาครุภัณฑ์
                 </button>
             </div>
@@ -86,29 +85,31 @@ include '../conn/conn.php';
                         $iconStatus = 'n.png';
                     }
                 ?>
-                <div class="col-md-3 mb-3 ">
-                    <div class="card">
-                        <div class="cardFixSize">
-                            <div class="imgFix">
-                                <div class="iconStatus"><img src="../images/<?= $iconStatus ?>" alt="" srcset=""></div>
-                                <img class="card-img-top" src="<?= $toolImg ?>" alt="<?= $r["tool_ad1"] ?>">
-                            </div>
-                            <div class="card-body cardBk">
-                                <p class="card-text cardText">
-                                    <b>เลขครุภัณฑ์ : </b> <?= $r["tool_as"] ?> <br>
-                                    <b>ชื่อครุภัณฑ์ :</b> <?= $r["tool_ad1"] ?> <br>
-                                    <b>ที่ตั้ง : </b> <?= $obj->nameRoom($r["tool_id_room"]) .$r["tool_id_room"] ?> <br>
-                                    <b>ผู้ครอบครอง : </b> <?= $toolIdUser  ?> <br>
-                                    <b>หน่วยงานที่รับผิดชอบ : </b> <?= $obj->checkTool($r["tool_check"]) ?>
-                                </p>
-                                <div class="text-center">
-                                    <a class="btn btn-warning btn-sm" href="edit.php?id=<?= $r["tool_id"] ?>"
-                                        role="button"><i class="bi bi-pencil-square"></i> แก้ไขข้อมูล</a>
+                    <div class="col-md-3 mb-3 ">
+                        <div class="card">
+                            <div class="cardFixSize">
+                                <div class="imgFix">
+                                    <div class="iconStatus"><img src="../images/<?= $iconStatus ?>" alt="" srcset=""></div>
+                                    <img class="card-img-top" src="<?= $toolImg ?>" alt="<?= $r["tool_ad1"] ?>">
+                                </div>
+                                <div class="card-body cardBk">
+                                    <p class="card-text cardText">
+                                        <b>เลขครุภัณฑ์ : </b> <?= $r["tool_as"] ?> <br>
+                                        <b>ชื่อครุภัณฑ์ :</b> <?= $r["tool_ad1"] ?> <br>
+                                        <b>ที่ตั้ง : </b> <?= $obj->nameRoom($r["tool_id_room"]) . $r["tool_id_room"] ?>
+                                        <br>
+                                        <b>ผู้ครอบครอง : </b> <?= $toolIdUser  ?> <br>
+                                        <b>หน่วยงานที่รับผิดชอบ : </b> <?= $obj->checkTool($r["tool_check"]) ?>
+                                    </p>
+                                    <div class="text-center">
+                                        <a class="btn btn-warning btn-sm" href="edit.php?id=<?= $r["tool_id"] ?>" role="button"><i class="bi bi-pencil-square"></i> แก้ไขข้อมูล</a>
+
+                                        <a class="btn btn-secondary btn-sm" href="detailTool.php?id=<?= $r["tool_id"] ?>" role="button"><i class="bi bi-door-open"></i> รายละเอียด</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 <?php
                 }
                 ?>
@@ -135,9 +136,10 @@ include '../conn/conn.php';
 
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"
-        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <?php include 'modalSearch.php'; ?>
+    <?php include '../title-footer/footer.php'; ?>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
