@@ -49,12 +49,12 @@ include '../conn/conn.php';
                 <b>รายละเอียดครุภัณฑ์ : </b> <?= $r["tool_ad2"] ?> <br>
                 <b>แหล่งเงิน : </b> <?= $r["tool_fund"] ?> <b>ปีงบประมาณ : </b> <?= $r["tool_year"] ?><br>
                 <b>วันที่รับครุภัณฑ์ : </b> <?= $obj->toolCd($r["tool_cd"]) ?> <br>
+                <b>สถานะการใช้งาน : </b> <?= $obj->toolStatus($r["tool_sta"]) ?> <br>
             </div>
         </div>
     </div>
     <?php include '../title-footer/footer.php'; ?>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"
-        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
 </body>
 
