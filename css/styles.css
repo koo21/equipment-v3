@@ -67,12 +67,17 @@
   color: black;
 }
 
-.footerText {
-  text-align: center;
-  font-size: 14px;
-  font-family: "Prompt", sans-serif;
-  margin-top: 5rem;
-  padding: 3rem 0rem;
-  background-color: black;
-  color: #fff;
+.imgesShow {
+  display: flex;
+  width: auto;
+  height: auto;
+
+}
+.imgesShow img{
+  align-items: center;
+  margin: auto;
+  width: 250px;
+  height: auto;
+  object-fit: cover;
+  
 }
