@@ -75,12 +75,12 @@
   padding: 3rem 0rem;
   background-color: black;
   color: #fff;
-
+}
 .imgesShow {
   display: flex;
   width: auto;
   height: auto;
-  background-color: aqua;
+  
 
 }
 .imgesShow img{
