@@ -66,3 +66,18 @@
   background-color: rgb(252, 240, 226);
   color: black;
 }
+
+.imgesShow {
+  display: flex;
+  width: auto;
+  height: auto;
+
+}
+.imgesShow img{
+  align-items: center;
+  margin: auto;
+  width: 250px;
+  height: auto;
+  object-fit: cover;
+  
+}
