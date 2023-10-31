@@ -81,11 +81,10 @@
   width: auto;
   height: auto;
 }
-.imgesShow img{
+.imgesShow img {
   align-items: center;
   margin: auto;
   width: 250px;
   height: auto;
   object-fit: cover;
-  
 }
