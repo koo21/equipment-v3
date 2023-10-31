@@ -75,7 +75,7 @@
   padding: 3rem 0rem;
   background-color: black;
   color: #fff;
-
+}
 .imgesShow {
   display: flex;
   width: auto;
@@ -83,11 +83,10 @@
   background-color: aqua;
 }
 
-.imgesShow img{
+.imgesShow img {
   align-items: center;
   margin: auto;
   width: 250px;
   height: auto;
   object-fit: cover;
-  
 }
