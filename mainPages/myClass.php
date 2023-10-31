@@ -30,4 +30,27 @@ class MyClass
 
         return $r["ac_name"];
     }
+
+    /** จัดการวันเดือนปี วันที่รับครุภัณฑ์ */
+
+    public function toolStatus($n)
+    {
+        if ($n == 1) {
+            return "ใช้งานอยู่";
+        } elseif ($n == 0) {
+            return "ไม่ได้ใช้งาน";
+        }
+    }
+
+    public function toolCd($n)
+    {
+        include '../array/month.php';
+        $toolCdEx = explode(".", $n);
+        if ($toolCdEx[2] > 2500) {
+            $toolCdYear = $toolCdEx[2];
+        } else {
+            $toolCdYear = $toolCdEx[2] + 543;
+        }
+        return $toolCdEx[0] . ' ' . $month[(int)$toolCdEx[1]] . ' ' . $toolCdYear;
+    }
 }
