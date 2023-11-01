@@ -48,8 +48,23 @@ include '../conn/conn.php';
                 <b>เลขครุภัณฑ์ : </b> <?= $r["tool_as"] ?> <b>ชื่อครุภัณฑ์ : </b> <?= $r["tool_ad1"] ?><br>
                 <b>รายละเอียดครุภัณฑ์ : </b> <?= $r["tool_ad2"] ?> <br>
                 <b>แหล่งเงิน : </b> <?= $r["tool_fund"] ?> <b>ปีงบประมาณ : </b> <?= $r["tool_year"] ?><br>
-                <b>วันที่รับครุภัณฑ์ : </b> <?= $obj->toolCd($r["tool_cd"]) ?> <br>
+                <b>วันที่รับครุภัณฑ์ : </b> <?= $obj->toolCd($r["tool_cd"]) ?>
+                <b> วันที่ครอบครอง : </b> <?= $obj->toolOccupy($r["tool_occupy"]) ?> <br>
+                <?= $obj->nameRoomFull($r["tool_id_room"]) ?><br>
+                <b>ผู้ดูแล : </b> <?= $obj->checkTool($r["tool_check"]) ?> <br>
+                <b>ผู้ใช้งาน : </b> <?= $obj->nameUser($r["tool_user_id"]) ?> <br>
+                <b>ประเภทอุปกรณ์ : </b> <?= $obj->toolStatus2($r["tool_sta2"]) ?> <br>
                 <b>สถานะการใช้งาน : </b> <?= $obj->toolStatus($r["tool_sta"]) ?> <br>
+                <b>รายระเอียดอื่นๆ : </b> <?= $r["tool_ad2"] ?> <br>
+                <b>ยี่ห้อ : </b> <?= $r["tool_bn"] ?> <br>
+                <b>รุ่น : </b> <?= $r["tool_md"] ?> <br>
+                <b>คุณสมบัติ : </b> <?= $r["tool_ab"] ?> <br>
+                <b>ชื่อบริษัท : </b> <?= $r["tool_company"] ?> <br>
+                <b>ที่อยู่ : </b> <?= $r["tool_company_at"] ?> <br>
+                <b>เบอร์โทรศัพท์ : </b> <?= $r["tool_company_tel"] ?> <br>
+                <b>อายุการรับประกัน : </b> <?= $obj->toolQt($r["tool_qt"]) ?> <br>
+                <b>ราคา : </b> <?= $r["tool_ov"] ?> <br>
+                <b>Serial Number : </b> <?= $r["tool_sn"] ?> <br>
             </div>
         </div>
     </div>
