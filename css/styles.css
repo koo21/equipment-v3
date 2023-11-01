@@ -88,3 +88,7 @@
   height: auto;
   object-fit: cover;
 }
+
+.detailText {
+  line-height: 28px;
+}
