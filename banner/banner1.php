@@ -5,7 +5,7 @@
     </div>
     <div class="menuBox1">
         <ul>
-            <li><a href="logout.php"><i class="bi bi-box-arrow-in-right"></i>
+            <li><a href="../mainPages/logout.php"><i class="bi bi-box-arrow-in-right"></i>
                     ออกจากระบบงานครุภัณฑ์</a></li>
         </ul>
     </div>
