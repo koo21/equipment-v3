@@ -46,22 +46,19 @@ if (empty($id)) {
                 <div class="row g-3">
                     <div class="col-md-6">
                         <label for="inputPassword" class="col-form-label">เลขครุภัณฑ์*</label>
-                        <input type="text" class="form-control numberTool" id="inputPassword" name="numberTool"
-                            placeholder="เลขครุภัณฑ์" value="<?= $r["tool_as"] ?>">
+                        <input type="text" class="form-control numberTool" id="inputPassword" name="numberTool" placeholder="เลขครุภัณฑ์" value="<?= $r["tool_as"] ?>">
 
                     </div>
                     <div class="col-md-6">
                         <label for="inputPassword" class="col-form-label">ชื่อครุภัณฑ์*</label>
-                        <input type="text" class="form-control nameTool" id="inputPassword" name="nameTool"
-                            placeholder="ชื่อครุภัณฑ์">
+                        <input type="text" class="form-control nameTool" id="inputPassword" name="nameTool" placeholder="ชื่อครุภัณฑ์">
 
                     </div>
                 </div>
 
                 <div class="mb-3 ">
                     <label for="inputPassword" class="col-form-label">รายละเอียดครุภัณฑ์</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                        name="detailTool"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="detailTool"></textarea>
                 </div>
                 <div class="row">
                     <div class="col">
@@ -75,7 +72,7 @@ if (empty($id)) {
 
 
                             ?>
-                            <option value="<?= $moneyTool["tool_fund"] ?>"><?= $moneyTool["tool_fund"] ?></option>
+                                <option value="<?= $moneyTool["tool_fund"] ?>"><?= $moneyTool["tool_fund"] ?></option>
                             <?php
                             }
                             ?>
@@ -84,8 +81,7 @@ if (empty($id)) {
                     </div>
                     <div class="col">
                         <label for="inputPassword" class=" col-form-label">ปีงบประมาณ*</label>
-                        <input type="number" class="form-control yearTool" id="inputPassword" name="yearTool"
-                            placeholder="ปีงบประมาณ">
+                        <input type="number" class="form-control yearTool" id="inputPassword" name="yearTool" placeholder="ปีงบประมาณ">
 
                     </div>
                     <div class="col">
@@ -97,8 +93,7 @@ if (empty($id)) {
                 <div class="row">
                     <div class="col">
                         <label for="inputPassword" class="col-form-label">สถานที่ตั้ง</label>
-                        <input type="text" class="form-control" id="inputPassword" name="alTool"
-                            placeholder="สถานที่ตั้ง">
+                        <input type="text" class="form-control" id="inputPassword" name="alTool" placeholder="สถานที่ตั้ง">
                     </div>
                     <div class="col">
                         <label for="inputPassword" class="col-form-label">ชั้น*</label>
@@ -110,7 +105,7 @@ if (empty($id)) {
                             $rf->execute();
                             while ($seRoof = $rf->fetch(PDO::FETCH_ASSOC)) {
                             ?>
-                            <option value="<?= $seRoof["roof_id"] ?>"><?= $seRoof["roof_name"] ?></option>
+                                <option value="<?= $seRoof["roof_id"] ?>"><?= $seRoof["roof_name"] ?></option>
 
                             <?php
                             }
@@ -128,7 +123,7 @@ if (empty($id)) {
                             $room->execute();
                             while ($row = $room->fetch(PDO::FETCH_ASSOC)) {
                             ?>
-                            <option value="<?= $row["room_id"] ?>"><?= $row["room_name"] ?></option>
+                                <option value="<?= $row["room_id"] ?>"><?= $row["room_name"] ?></option>
 
                             <?php
                             }
@@ -148,7 +143,7 @@ if (empty($id)) {
                             $ac->execute();
                             while ($acTool = $ac->fetch(PDO::FETCH_ASSOC)) {
                             ?>
-                            <option value="<?= $acTool["ac_id"] ?>"><?= $acTool["ac_name"] ?></option>
+                                <option value="<?= $acTool["ac_id"] ?>"><?= $acTool["ac_name"] ?></option>
 
                             <?php
                             }
@@ -166,7 +161,7 @@ if (empty($id)) {
                             $userTool->execute();
                             while ($rowUser = $userTool->fetch(PDO::FETCH_ASSOC)) {
                             ?>
-                            <option value="<?= $rowUser["user_id"] ?>"><?= $rowUser["name"] ?></option>
+                                <option value="<?= $rowUser["user_id"] ?>"><?= $rowUser["name"] ?></option>
 
                             <?php
                             }
@@ -191,7 +186,7 @@ if (empty($id)) {
                             $seType->execute();
                             while ($tyTool = $seType->fetch(PDO::FETCH_ASSOC)) {
                             ?>
-                            <option value="<?= $tyTool["type_id"] ?>"><?= $tyTool["type_name"] ?></option>
+                                <option value="<?= $tyTool["type_id"] ?>"><?= $tyTool["type_name"] ?></option>
 
                             <?php
                             }
@@ -219,7 +214,7 @@ if (empty($id)) {
                                     $statusText = 'ใช้งานอยู่';
                                 }
                             ?>
-                            <option value="<?= $statusNum ?>"><?= $statusText ?></option>
+                                <option value="<?= $statusNum ?>"><?= $statusText ?></option>
                             <?php
                             }
                             ?>
@@ -266,14 +261,12 @@ if (empty($id)) {
                 <div class="row">
                     <div class="col">
                         <label for="inputPassword" class=" col-form-label">เบอร์โทรศัพท์</label>
-                        <input type="text" class="form-control" id="inputPassword" name="TelTool"
-                            placeholder="เบอร์โทรศัพท์">
+                        <input type="text" class="form-control" id="inputPassword" name="TelTool" placeholder="เบอร์โทรศัพท์">
 
                     </div>
                     <div class="col">
                         <label for="inputPassword" class=" col-form-label">อายุการรับประกัน</label>
-                        <input type="number" class="form-control" id="inputPassword" name="lifeTimeTool"
-                            placeholder="อายุประกันภัย">
+                        <input type="number" class="form-control" id="inputPassword" name="lifeTimeTool" placeholder="อายุประกันภัย">
 
                     </div>
 
@@ -286,8 +279,7 @@ if (empty($id)) {
                     </div>
                     <div class="col">
                         <label for="inputPassword" class=" col-form-label">Serial Number</label>
-                        <input type="number" class="form-control" id="inputPassword" name="snTool"
-                            placeholder="Serial Number">
+                        <input type="number" class="form-control" id="inputPassword" name="snTool" placeholder="Serial Number">
 
                     </div>
 
@@ -307,82 +299,81 @@ if (empty($id)) {
 <link rel="stylesheet" href="../boot5/js/bootstrap.min.js">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.all.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 <script>
-function showImage(src, target) {
-    var fr = new FileReader();
-    // when image is loaded, set the src of the image where you want to display it
-    fr.onload = function(e) {
-        target.src = this.result;
-    };
-    src.addEventListener("change", function() {
-        // fill fr with image data    
-        fr.readAsDataURL(src.files[0]);
-    });
-}
-var src = document.getElementById("src");
-var target = document.getElementById("target");
-showImage(src, target);
+    function showImage(src, target) {
+        var fr = new FileReader();
+        // when image is loaded, set the src of the image where you want to display it
+        fr.onload = function(e) {
+            target.src = this.result;
+        };
+        src.addEventListener("change", function() {
+            // fill fr with image data    
+            fr.readAsDataURL(src.files[0]);
+        });
+    }
+    var src = document.getElementById("src");
+    var target = document.getElementById("target");
+    showImage(src, target);
 
-// $(document).ready(function() {
-//     $(".btnsub").click(function() {
-//         if ($(".numberTool").val() == "") {
+    // $(document).ready(function() {
+    //     $(".btnsub").click(function() {
+    //         if ($(".numberTool").val() == "") {
 
-//             Swal.fire({
-//                 icon: 'error',
-//                 title: 'กรุณาใส่ข้อมูลให้ครบ ตามเครื่องหมาย *',
-//                 text: 'กรุณาระบุเลขครุภัณฑ์',
-//             })
-//             return false;
+    //             Swal.fire({
+    //                 icon: 'error',
+    //                 title: 'กรุณาใส่ข้อมูลให้ครบ ตามเครื่องหมาย *',
+    //                 text: 'กรุณาระบุเลขครุภัณฑ์',
+    //             })
+    //             return false;
 
-//         }
+    //         }
 
-//         if ($(".nameTool").val() == "") {
-//             Swal.fire({
-//                 icon: 'error',
-//                 title: 'กรุณาใส่ข้อมูลให้ครบ ตามเครื่องหมาย *',
-//                 text: 'กรุณาระบุชื่อครุภัณฑ์',
-//             })
-//             return false;
-//         }
-//         if ($(".atMoneyTool").val() == 0) {
-//             Swal.fire({
-//                 icon: 'error',
-//                 title: 'กรุณาใส่ข้อมูลให้ครบ ตามเครื่องหมาย *',
-//                 text: 'กรุณาระบุแหล่งเงิน',
-//             })
-//             return false;
-//         }
+    //         if ($(".nameTool").val() == "") {
+    //             Swal.fire({
+    //                 icon: 'error',
+    //                 title: 'กรุณาใส่ข้อมูลให้ครบ ตามเครื่องหมาย *',
+    //                 text: 'กรุณาระบุชื่อครุภัณฑ์',
+    //             })
+    //             return false;
+    //         }
+    //         if ($(".atMoneyTool").val() == 0) {
+    //             Swal.fire({
+    //                 icon: 'error',
+    //                 title: 'กรุณาใส่ข้อมูลให้ครบ ตามเครื่องหมาย *',
+    //                 text: 'กรุณาระบุแหล่งเงิน',
+    //             })
+    //             return false;
+    //         }
 
-//         if ($(".yearTool").val() == 0) {
-//             Swal.fire({
-//                 icon: 'error',
-//                 title: 'กรุณาใส่ข้อมูลให้ครบ ตามเครื่องหมาย *',
-//                 text: 'กรุณาระบุปีงบประมาณ',
-//             })
-//             return false;
-//         }
-//         if ($(".roofTool").val() == 0) {
-//             Swal.fire({
-//                 icon: 'error',
-//                 title: 'กรุณาใส่ข้อมูลให้ครบ ตามเครื่องหมาย *',
-//                 text: 'กรุณาระบุชั้น',
-//             })
-//             return false;
-//         }
-//         if ($(".acTool").val() == 0) {
-//             Swal.fire({
-//                 icon: 'error',
-//                 title: 'กรุณาใส่ข้อมูลให้ครบ ตามเครื่องหมาย *',
-//                 text: 'กรุณาระบุผู้ดูแล',
-//             })
-//             return false;
-//         }
+    //         if ($(".yearTool").val() == 0) {
+    //             Swal.fire({
+    //                 icon: 'error',
+    //                 title: 'กรุณาใส่ข้อมูลให้ครบ ตามเครื่องหมาย *',
+    //                 text: 'กรุณาระบุปีงบประมาณ',
+    //             })
+    //             return false;
+    //         }
+    //         if ($(".roofTool").val() == 0) {
+    //             Swal.fire({
+    //                 icon: 'error',
+    //                 title: 'กรุณาใส่ข้อมูลให้ครบ ตามเครื่องหมาย *',
+    //                 text: 'กรุณาระบุชั้น',
+    //             })
+    //             return false;
+    //         }
+    //         if ($(".acTool").val() == 0) {
+    //             Swal.fire({
+    //                 icon: 'error',
+    //                 title: 'กรุณาใส่ข้อมูลให้ครบ ตามเครื่องหมาย *',
+    //                 text: 'กรุณาระบุผู้ดูแล',
+    //             })
+    //             return false;
+    //         }
 
-//     })
+    //     })
 
-//})
+    //})
 </script>
 
 </html>
