@@ -92,3 +92,28 @@
 .detailText {
   line-height: 28px;
 }
+
+.indexBox {
+  display: block;
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.indexIcon {
+  display: block;
+  width: 150px;
+  height: auto;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 1.5rem;
+}
+
+.indexIcon img {
+  width: 100%;
+  height: auto;
+}
+
+.indexBoxText {
+  font-size: 22px;
+}

@@ -16,7 +16,16 @@
 
     <?php include '../banner/banner.php'; ?>
 
-
+    <div class="container" style="margin-top: 30rem">
+        <div class="row">
+            <div class="cpl-md-4">
+                <div class="indexBox">
+                    <div class="indexIcon"><img src="../images/computer-repair-icon.png" alt="" srcset=""></div>
+                    <div class="indexBoxText">ระบบแจ้งซ่อม</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 </body>
